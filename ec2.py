@@ -17,6 +17,6 @@ ec2.create_tags(
     Tags=[{'Key':'Name', 'Value':'RHEL-Linux-Machine'}]
 )
 time.sleep(60) 
-response = ec2.terminate_instances(InstanceIds=[instance_id])
+response = ec2.terminate_instances(InstanceId=[instance_id])
 state = response['TerminatingInstances'][0]['CurrentState']['Name']
 print(f"Instance " + instance_id + " is now " + state)
